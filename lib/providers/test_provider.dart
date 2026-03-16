@@ -66,6 +66,9 @@ class TestProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  // Callback for UI updates when answer is submitted
+  Function()? onAnswerSubmitted;
+
   void nextQuestion() {
     if (!_hasAnsweredCurrent) return;
 

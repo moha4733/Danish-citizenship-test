@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../providers/test_provider.dart';
+import '../models/question.dart';
 
 class QuestionScreen extends StatefulWidget {
   const QuestionScreen({super.key});
@@ -11,14 +12,56 @@ class QuestionScreen extends StatefulWidget {
   State<QuestionScreen> createState() => _QuestionScreenState();
 }
 
-class _QuestionScreenState extends State<QuestionScreen> {
+class _QuestionScreenState extends State<QuestionScreen> 
+    with TickerProviderStateMixin {
   Timer? _timer;
   int _remainingSeconds = 30 * 60; // 30 minutes
   bool _timerEnabled = false;
+  late AnimationController _progressBarController;
+  late Animation<Color?> _progressBarColor;
+  late AnimationController _shakeController;
+  late AnimationController _checkmarkController;
+  late Animation<double> _shakeAnimation;
+  late Animation<double> _checkmarkAnimation;
 
   @override
   void initState() {
     super.initState();
+    _progressBarController = AnimationController(
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    );
+    
+    _progressBarColor = ColorTween(
+      begin: Colors.red,
+      end: Colors.green,
+    ).animate(_progressBarController);
+    
+    _shakeController = AnimationController(
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    );
+    
+    _checkmarkController = AnimationController(
+      duration: const Duration(milliseconds: 800),
+      vsync: this,
+    );
+    
+    _shakeAnimation = Tween<double>(
+      begin: 0,
+      end: 10,
+    ).animate(CurvedAnimation(
+      parent: _shakeController,
+      curve: Curves.elasticIn,
+    ));
+    
+    _checkmarkAnimation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(CurvedAnimation(
+      parent: _checkmarkController,
+      curve: Curves.elasticOut,
+    ));
   }
 
   @override
@@ -30,7 +73,38 @@ class _QuestionScreenState extends State<QuestionScreen> {
   @override
   void dispose() {
     _timer?.cancel();
+    _progressBarController.dispose();
+    _shakeController.dispose();
+    _checkmarkController.dispose();
     super.dispose();
+  }
+
+  void _updateProgressBarColor() {
+    final testProvider = Provider.of<TestProvider>(context, listen: false);
+    final score = testProvider.score;
+    final totalQuestions = testProvider.totalQuestions;
+    final percentage = score / totalQuestions;
+    
+    Color targetColor;
+    if (percentage < 0.6) { // Less than 60%
+      targetColor = Colors.red;
+    } else if (percentage < 0.8) { // 60-80%
+      targetColor = Colors.orange;
+    } else { // 80%+
+      targetColor = Colors.green;
+    }
+    
+    _progressBarColor.animateTo(targetColor);
+  }
+
+  void _triggerShakeAnimation() {
+    _shakeController.forward().then((_) {
+      _shakeController.reverse();
+    });
+  }
+
+  void _triggerCheckmarkAnimation() {
+    _checkmarkController.forward();
   }
 
   void _startTimer() {
@@ -85,6 +159,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
                   _startTimer();
                 });
               }
+              
+              // Update progress bar color when score changes
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                _updateProgressBarColor();
+              });
               
               if (testProvider.currentQuestion == null) {
                 return const Center(
@@ -163,33 +242,43 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                   color: Colors.white,
                                 ),
                               ),
-                              Text(
-                                '${(testProvider.progress * 100).toInt()}%',
-                                style: GoogleFonts.poppins(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
-                                ),
+                              AnimatedBuilder(
+                                animation: _progressBarColor,
+                                builder: (context, child) {
+                                  return Text(
+                                    '${(testProvider.progress * 100).toInt()}%',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white,
+                                    ),
+                                  );
+                                },
                               ),
                             ],
                           ),
                           const SizedBox(height: 8),
-                          Container(
-                            height: 8,
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.2),
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                            child: FractionallySizedBox(
-                              alignment: Alignment.centerLeft,
-                              widthFactor: testProvider.progress,
-                              child: Container(
+                          AnimatedBuilder(
+                            animation: _progressBarColor,
+                            builder: (context, child) {
+                              return Container(
+                                height: 8,
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: Colors.white.withValues(alpha: 0.2),
                                   borderRadius: BorderRadius.circular(4),
                                 ),
-                              ),
-                            ),
+                                child: FractionallySizedBox(
+                                  alignment: Alignment.centerLeft,
+                                  widthFactor: testProvider.progress,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: _progressBarColor.value ?? Colors.red,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                         ],
                       ),
@@ -321,45 +410,74 @@ class _QuestionScreenState extends State<QuestionScreen> {
       onTap: () {
         if (!testProvider.hasAnsweredCurrent) {
           testProvider.answerQuestion(index);
+          
+          // Trigger animations based on answer
+          if (isCorrect) {
+            _triggerCheckmarkAnimation();
+          } else {
+            _triggerShakeAnimation();
+          }
         }
       },
-      child: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: borderColor,
-            width: 2,
-          ),
-          boxShadow: isSelected ? [
-            BoxShadow(
-              color: const Color(0xFF3B82F6).withValues(alpha: 0.1),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
+      child: AnimatedBuilder(
+        animation: _shakeAnimation,
+        builder: (context, child) {
+          return Transform.translate(
+            offset: Offset(
+              testProvider.hasAnsweredCurrent && !isCorrect && isSelected 
+                  ? _shakeAnimation.value * 0.1 
+                  : 0,
+              0,
             ),
-          ] : [],
-        ),
-        child: Row(
-          children: [
-            Container(
-              width: 24,
-              height: 24,
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
               decoration: BoxDecoration(
-                shape: BoxShape.circle,
+                color: backgroundColor,
+                borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: isSelected ? const Color(0xFF3B82F6) : Colors.grey.withValues(alpha: 0.3),
+                  color: borderColor,
                   width: 2,
                 ),
-                color: isSelected ? const Color(0xFF3B82F6) : Colors.transparent,
+                boxShadow: isSelected ? [
+                  BoxShadow(
+                    color: const Color(0xFF3B82F6).withValues(alpha: 0.1),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ] : [],
               ),
-              child: isSelected ? const Icon(
-                Icons.check,
-                size: 16,
-                color: Colors.white,
-              ) : null,
-            ),
+              child: Row(
+                children: [
+                  Container(
+                    width: 24,
+                    height: 24,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: isSelected ? const Color(0xFF3B82F6) : Colors.grey.withValues(alpha: 0.3),
+                        width: 2,
+                      ),
+                      color: isSelected ? const Color(0xFF3B82F6) : Colors.transparent,
+                    ),
+                    child: AnimatedBuilder(
+                      animation: _checkmarkAnimation,
+                      builder: (context, child) {
+                        return Transform.scale(
+                          scale: testProvider.hasAnsweredCurrent && isCorrect && isSelected 
+                              ? _checkmarkAnimation.value 
+                              : 0,
+                          child: isSelected && testProvider.hasAnsweredCurrent && isCorrect
+                              ? const Icon(
+                                  Icons.check,
+                                  size: 16,
+                                  color: Colors.white,
+                                )
+                              : null,
+                        );
+                      },
+                    ),
+                  ),
             const SizedBox(width: 16),
             Expanded(
               child: Text(
