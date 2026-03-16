@@ -1,0 +1,431 @@
+[
+  {
+    "question": "Hvornår blev Danmark samlet under én konge i vikingetiden?",
+    "answers": [
+      "Omkring år 700",
+      "Omkring år 965",
+      "Omkring år 1016",
+      "Omkring år 1100"
+    ],
+    "correctIndex": 1,
+    "explanation": "Harald Blåtand regnes som den første konge, der regerede hele Danmark omkring år 965. Han rejste også Jellingstenene som kaldes Danmarks dåbsattest."
+  },
+  {
+    "question": "Hvad betyder navnet 'Danmark' ifølge lærematerialet?",
+    "answers": [
+      "Danernes land",
+      "Danernes grænseområde",
+      "Nordens rige",
+      "Vikingernes hjem"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ordet 'Danmark' kendes fra slutningen af 800-tallet. 'Dan' kommer af 'daner' og 'mark' betyder 'grænseområde'. Danmark var altså 'danernes grænseområde'."
+  },
+  {
+    "question": "Hvilken konge regerede i næsten 60 år og er en af de mest betydningsfulde danske konger?",
+    "answers": [
+      "Gorm den Gamle",
+      "Harald Blåtand",
+      "Christian 4.",
+      "Frederik 7."
+    ],
+    "correctIndex": 2,
+    "explanation": "Christian 4. (1588-1648) var konge i næsten 60 år og har dermed været konge længere end nogen anden i Danmarks historie. Han er også en af de mest betydningsfulde konger."
+  },
+  {
+    "question": "Hvad skete i 1536 i Danmark?",
+    "answers": [
+      "Reformationen blev gennemført",
+      "Danmark fik sin første grundlov",
+      "Vikingetiden sluttede",
+      "Kalmarunionen blev oprettet"
+    ],
+    "correctIndex": 0,
+    "explanation": "I 1536 blev reformationen formelt gennemført i Danmark. Danmark blev et protestantisk land, og kongen afsatte de katolske biskopper."
+  },
+  {
+    "question": "Hvornår blev Danmarks første frie forfatning (Grundlov) underskrevet?",
+    "answers": [
+      "1660",
+      "1849",
+      "1915",
+      "1953"
+    ],
+    "correctIndex": 1,
+    "explanation": "Den 5. juni 1849 underskrev Frederik 7. Danmarks første frie forfatning, Danmarks Riges Grundlov. Dette afsluttede næsten 200 års enevælde."
+  },
+  {
+    "question": "Hvad var 'Den Sorte Død'?",
+    "answers": [
+      "En krig mod Sverige",
+      "En pestepidemi",
+      "En hungersnød",
+      "En borgerkrig"
+    ],
+    "correctIndex": 1,
+    "explanation": "Den Sorte Død var en pestepidemi, der ramte Danmark og resten af Europa omkring 1350 og slog op mod halvdelen af befolkningen ihjel."
+  },
+  {
+    "question": "Hvilken periode kaldes 'Den Florissante Periode'?",
+    "answers": [
+      "Vikingetiden",
+      "Middelalderen",
+      "Sidste fjerdedel af 1700-tallet",
+      "Industrialiseringen"
+    ],
+    "correctIndex": 2,
+    "explanation": "I sidste fjerdedel af 1700-tallet blomstrede dansk søfart, og København udviklede sig til en international storhavn. Perioden kaldes Den Florissante Periode."
+  },
+  {
+    "question": "Hvad mistede Danmark ved fredsslutningen i 1864?",
+    "answers": [
+      "Kun Slesvig",
+      "Kun Holsten",
+      "Slesvig, Holsten og Lauenborg",
+      "Kun Norge"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ved fredsslutningen i 1864 måtte Danmark afstå Slesvig, Holsten og det lille hertugdømme Lauenborg til Preussen og Østrig."
+  },
+  {
+    "question": "Hvad er 'Septemberforliget' fra 1899?",
+    "answers": [
+      "En grundlovsændring",
+      "En aftale mellem arbejdsgivere og arbejdere",
+      "En landboreform",
+      "En skattereform"
+    ],
+    "correctIndex": 1,
+    "explanation": "Septemberforliget fra 1899 er en historisk aftale mellem arbejdsmarkedets to hovedorganisationer. Den ligger stadig til grund for 'Den Danske Model'."
+  },
+  {
+    "question": "Hvilket land deler Danmark grænse med mod syd?",
+    "answers": [
+      "Sverige",
+      "Norge",
+      "Tyskland",
+      "Polen"
+    ],
+    "correctIndex": 2,
+    "explanation": "Danmark deler en 68 km lang grænse med Tyskland mod syd."
+  },
+  {
+    "question": "Hvad er Danmarks valuta?",
+    "answers": [
+      "Euro",
+      "Krone",
+      "Dollar",
+      "Pund"
+    ],
+    "correctIndex": 1,
+    "explanation": "Danmarks valuta er danske kroner (DKK)."
+  },
+  {
+    "question": "Hvilken farve er ikke i det danske flag?",
+    "answers": [
+      "Rød",
+      "Hvid",
+      "Blå",
+      "Ingen af ovenstående"
+    ],
+    "correctIndex": 2,
+    "explanation": "Det danske flag (Dannebrog) er rødt med et hvidt kors."
+  },
+  {
+    "question": "Hvad er Danmarks største ø?",
+    "answers": [
+      "Fyn",
+      "Bornholm",
+      "Sjælland",
+      "Lolland"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sjælland er Danmarks største ø med København som hovedby."
+  },
+  {
+    "question": "Hvem skrev Danmarks nationalsang?",
+    "answers": [
+      "Adam Oehlenschläger",
+      "H.C. Andersen",
+      "Søren Kierkegaard",
+      "N.F.S. Grundtvig"
+    ],
+    "correctIndex": 0,
+    "explanation": "Adam Oehlenschläger skrev teksten til 'Der er et yndigt land'."
+  },
+  {
+    "question": "Hvad er navnet på Danmarks ældste kongeslægt?",
+    "answers": [
+      "Glücksburg",
+      "Oldenborg",
+      "Estridsen",
+      "Svend"
+    ],
+    "correctIndex": 2,
+    "explanation": "Estridsen-slægten er Danmarks ældste kongeslægt, der kan spores tilbage til 1000-tallet."
+  },
+  {
+    "question": "Hvilket år blev Grønland en del af Danmark?",
+    "answers": [
+      "1721",
+      "1814",
+      "1953",
+      "1979"
+    ],
+    "correctIndex": 2,
+    "explanation": "Grønland blev en integreret del af Danmark i 1953, men fik hjemmestyre i 1979."
+  },
+  {
+    "question": "Hvad er navnet på Danmarks højeste punkt?",
+    "answers": [
+      "Himmelbjerget",
+      "Møllehøj",
+      "Ejer Bavnehøj",
+      "Gyldenløves Høj"
+    ],
+    "correctIndex": 1,
+    "explanation": "Møllehøj er Danmarks højeste punkt med 170,86 meter."
+  },
+  {
+    "question": "Hvilket land er medlem af Nordisk Råd?",
+    "answers": [
+      "Estland",
+      "Tyskland",
+      "Island",
+      "Rusland"
+    ],
+    "correctIndex": 2,
+    "explanation": "Island er medlem af Nordisk Råd sammen med Danmark, Norge, Sverige og Finland."
+  },
+  {
+    "question": "Hvad er Danmarks officielle sprog?",
+    "answers": [
+      "Norsk",
+      "Svensk",
+      "Dansk",
+      "Tysk"
+    ],
+    "correctIndex": 2,
+    "explanation": "Dansk er Danmarks officielle sprog."
+  },
+  {
+    "question": "Hvilken dansk forfatter skrev 'Den lille havfrue'?",
+    "answers": [
+      "Karen Blixen",
+      "H.C. Andersen",
+      "Søren Kierkegaard",
+      "Ludvig Holberg"
+    ],
+    "correctIndex": 1,
+    "explanation": "H.C. Andersen skrev 'Den lille havfrue' i 1837."
+  },
+  {
+    "question": "Hvad er navnet på Danmarks nationalstadion?",
+    "answers": [
+      "Parken",
+      "Brøndby Stadion",
+      "Aarhus Stadion",
+      "Odense Stadion"
+    ],
+    "correctIndex": 0,
+    "explanation": "Parken i København er Danmarks nationalstadion for fodbold."
+  },
+  {
+    "question": "Hvilket år blev Danmark medlem af EU?",
+    "answers": [
+      "1957",
+      "1973",
+      "1992",
+      "2000"
+    ],
+    "correctIndex": 1,
+    "explanation": "Danmark blev medlem af det daværende EF (nu EU) i 1973."
+  },
+  {
+    "question": "Hvad er navnet på den danske dronning, der abdicerede i 2024?",
+    "answers": [
+      "Dronning Margrethe I",
+      "Dronning Margrethe II",
+      "Dronning Ingrid",
+      "Dronning Caroline"
+    ],
+    "correctIndex": 1,
+    "explanation": "Dronning Margrethe II abdicerede den 14. januar 2024 efter 52 år på tronen."
+  },
+  {
+    "question": "Hvilket dansk firma er kendt for LEGO?",
+    "answers": [
+      "Maersk",
+      "Carlsberg",
+      "LEGO Group",
+      "Novo Nordisk"
+    ],
+    "correctIndex": 2,
+    "explanation": "LEGO Group er det danske firma, der producerer de berømte LEGO klodser."
+  },
+  {
+    "question": "Hvad er navnet på den danske pendant til FBI?",
+    "answers": [
+      "PET",
+      "FE",
+      "Politiet",
+      "Militæret"
+    ],
+    "correctIndex": 0,
+    "explanation": "PET (Politiets Efterretningstjeneste) er Danmarks efterretningstjeneste."
+  },
+  {
+    "question": "Hvilken dansk ø er kendt for sine klipper og 'Opalhulerne'?",
+    "answers": [
+      "Bornholm",
+      "Fyn",
+      "Langeland",
+      "Falster"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bornholm er kendt for sine klipper og 'Opalhulerne' ved Hammershus."
+  },
+  {
+    "question": "Hvad er navnet på Danmarks statsminister i 2024?",
+    "answers": [
+      "Lars Løkke Rasmussen",
+      "Mette Frederiksen",
+      "Anders Fogh Rasmussen",
+      "Helle Thorning-Schmidt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mette Frederiksen er Danmarks statsminister fra 2019."
+  },
+  {
+    "question": "Hvilket år blev København Danmarks hovedstad?",
+    "answers": [
+      "1416",
+      "1536",
+      "1660",
+      "1849"
+    ],
+    "correctIndex": 0,
+    "explanation": "København blev officielt Danmarks hovedstad i 1416 under kong Erik af Pommern."
+  },
+  {
+    "question": "Hvad er navnet på den danske centralbank?",
+    "answers": [
+      "Nordea",
+      "Danske Bank",
+      "Nationalbanken",
+      "Jyske Bank"
+    ],
+    "correctIndex": 2,
+    "explanation": "Danmarks Nationalbank er Danmarks centralbank."
+  },
+  {
+    "question": "Hvilket dansk område er kendt som 'Vadehavet'?",
+    "answers": [
+      "Nordsjælland",
+      "Vestjylland",
+      "Sydsjælland",
+      "Bornholm"
+    ],
+    "correctIndex": 1,
+    "explanation": "Vadehavet ligger ved vestkysten af Jylland og er et UNESCO verdensarvssted."
+  },
+  {
+    "question": "Hvad er navnet på den danske forfatning fra 1665?",
+    "answers": [
+      "Grundloven",
+      "Kongeloven",
+      "Rigsdagsloven",
+      "Forfatningsloven"
+    ],
+    "correctIndex": 1,
+    "explanation": "Kongeloven fra 1665 var enevældens forfatning."
+  },
+  {
+    "question": "Hvilken dansk by er kendt for sin 'gamle by'?",
+    "answers": [
+      "Aarhus",
+      "Odense",
+      "Aalborg",
+      "Esbjerg"
+    ],
+    "correctIndex": 0,
+    "explanation": "Aarhus er kendt for 'Den Gamle By', et frilandsmuseum."
+  },
+  {
+    "question": "Hvad er navnet på den danske ø, der ligger mellem Jylland og Fyn?",
+    "answers": [
+      "Samsø",
+      "Langeland",
+      "Tåsinge",
+      "Ærø"
+    ],
+    "correctIndex": 0,
+    "explanation": "Samsø ligger i Kattegat mellem Jylland og Fyn."
+  },
+  {
+    "question": "Hvilket år blev Færøerne en del af Danmark?",
+    "answers": [
+      "1380",
+      "1814",
+      "1948",
+      "1972"
+    ],
+    "correctIndex": 0,
+    "explanation": "Færøerne kom under dansk styre i 1380, men fik hjemmestyre i 1948."
+  },
+  {
+    "question": "Hvad er navnet på Danmarks længste flod?",
+    "answers": [
+      "Gudenåen",
+      "Skjern Å",
+      "Odense Å",
+      "Susåen"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gudenåen er Danmarks længste flod med 158 km."
+  },
+  {
+    "question": "Hvilken dansk by er fødested for H.C. Andersen?",
+    "answers": [
+      "København",
+      "Odense",
+      "Aarhus",
+      "Esbjerg"
+    ],
+    "correctIndex": 1,
+    "explanation": "H.C. Andersen blev født i Odense i 1805."
+  },
+  {
+    "question": "Hvad er navnet på den danske traditionelle julemiddag?",
+    "answers": [
+      "Pizza",
+      "Sushi",
+      "Flæskesteg",
+      "Bøf"
+    ],
+    "correctIndex": 2,
+    "explanation": "Flæskesteg med brun sovs og kartofler er den traditionelle danske julemiddag."
+  },
+  {
+    "question": "Hvilket dansk firma producerer insulin?",
+    "answers": [
+      "Carlsberg",
+      "Maersk",
+      "Novo Nordisk",
+      "LEGO"
+    ],
+    "correctIndex": 2,
+    "explanation": "Novo Nordisk er en dansk virksomhed, der producerer insulin og diabetesmedicin."
+  },
+  {
+    "question": "Hvad er navnet på den danske traditionelle fastelavnsbolle?",
+    "answers": [
+      "Kagemand",
+      "Wienerbrød",
+      "Fastelavnsbolle",
+      "Smørrebrød"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fastelavnsboller spises traditionelt i fastelavnsugen."
+  }
+]
